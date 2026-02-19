@@ -17,15 +17,15 @@ const navigation = {
         { name: "О нас", href: "/about" },
     ],
     categories: [
-        { name: "Физика", href: "#" },
-        { name: "Биология", href: "#" },
-        { name: "Технологии", href: "#" },
-        { name: "Космос", href: "#" },
+        { name: "Физика", href: "/categories/physics" },
+        { name: "Биология", href: "/categories/biology" },
+        { name: "Технологии", href: "/categories/technology" },
+        { name: "Космос", href: "/categories/space" },
     ],
     legal: [
-        { name: "Конфиденциальность", href: "#" },
-        { name: "Условия использования", href: "#" },
-        { name: "Редакционная политика", href: "#" },
+        { name: "Конфиденциальность", href: "/legal/privacy" },
+        { name: "Условия использования", href: "/legal/terms" },
+        { name: "Редакционная политика", href: "/legal/policy" },
     ],
     social: [
         { name: "Telegram", icon: TelegramLogo, href: "#" },

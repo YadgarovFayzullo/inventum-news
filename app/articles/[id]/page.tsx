@@ -47,13 +47,13 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
     <div className="min-h-screen bg-background selection:bg-primary/20">
       {/* Reading Progress Bar */}
       <div 
-        className="fixed top-0 left-0 h-1 bg-primary z-[60] transition-all duration-300" 
+        className="fixed top-0 left-0 h-1 bg-[var(--conura-orange)] z-[60] transition-all duration-300" 
         style={{ width: `${readingProgress}%` }}
       />
       
       <Header />
       
-      <main className="relative mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
+      <main className="relative mx-auto max-w-7xl px-6 pt-12 pb-40 sm:px-8 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-16">
           
           {/* Main Content */}
@@ -69,32 +69,35 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
 
             <article>
               <header className="mb-12">
-                <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-none rounded-xl px-4 py-2 text-xs font-black uppercase tracking-widest mb-8">
-                  {article.category}
-                </Badge>
+                <div className="flex items-center gap-4 mb-8">
+                  <Badge className="bg-[var(--conura-sea)]/10 text-[var(--conura-sea)] border-none rounded-full px-4 py-1.5 text-[10px] font-black uppercase tracking-widest">
+                    {article.category}
+                  </Badge>
+                  <span className="text-xs font-black uppercase tracking-widest text-muted-foreground">{article.date}</span>
+                </div>
                 
-                <h1 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl mb-10">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl font-black leading-[0.95] tracking-tighter text-foreground mb-12">
                   {article.title}
                 </h1>
                 
-                <div className="flex flex-wrap items-center gap-8 py-8 border-y border-primary/5">
+                <div className="flex flex-wrap items-center justify-between gap-6 py-8 border-y border-border">
                   <Link href="/authors/1" className="group/author flex items-center gap-4">
-                    <div className="h-14 w-14 rounded-2xl bg-secondary flex items-center justify-center text-primary border border-primary/5 shadow-sm group-hover/author:bg-primary/10 transition-colors">
-                      <User size={28} weight="duotone" />
+                    <div className="h-14 w-14 rounded-2xl bg-secondary flex items-center justify-center text-foreground border border-border group-hover/author:bg-[var(--conura-sea)] group-hover/author:text-background transition-colors">
+                      <User size={24} weight="duotone" />
                     </div>
                     <div>
-                      <div className="font-black text-lg text-foreground leading-tight group-hover/author:text-primary transition-colors">{article.author}</div>
-                      <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">{article.authorRole}</div>
+                      <div className="font-black text-lg text-foreground leading-tight group-hover/author:text-[var(--conura-sea)] transition-colors">{article.author}</div>
+                      <div className="text-[10px] font-black text-muted-foreground uppercase tracking-widest mt-1">{article.authorRole}</div>
                     </div>
                   </Link>
                   
-                  <div className="flex items-center gap-6 ml-auto">
-                    <div className="flex items-center gap-2 text-sm font-bold text-muted-foreground">
-                      <Clock size={20} weight="bold" className="text-primary/40" />
+                  <div className="flex items-center gap-8 ml-auto">
+                    <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-muted-foreground">
+                      <Clock size={16} weight="duotone" className="text-[var(--conura-orange)]" />
                       {article.readTime}
                     </div>
-                    <div className="flex items-center gap-2 text-sm font-bold text-muted-foreground">
-                      <Eye size={20} weight="bold" className="text-primary/40" />
+                    <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-muted-foreground">
+                      <Eye size={16} weight="duotone" className="text-[var(--conura-sea)]" />
                       {article.views}
                     </div>
                   </div>
@@ -102,33 +105,42 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
               </header>
 
               {/* Leading Text */}
-              <div className="text-2xl text-muted-foreground font-medium italic leading-relaxed mb-12 border-l-8 border-primary/20 pl-8 py-2">
+              <div className="text-2xl sm:text-3xl text-foreground font-black leading-tight mb-12 relative">
+                <span className="absolute -left-6 top-0 text-[var(--conura-orange)] opacity-50">/</span>
                 {article.description}
               </div>
 
               {/* Article content */}
-              <div className="prose prose-purple max-w-none text-foreground/90 leading-[1.8] font-medium text-lg">
-                <p className="text-xl leading-relaxed mb-8">
+              <div className="prose prose-lg max-w-none text-muted-foreground font-medium 
+                prose-headings:font-black prose-headings:tracking-tight prose-headings:text-foreground
+                prose-p:leading-relaxed prose-p:text-lg
+                prose-strong:text-foreground prose-strong:font-black
+                prose-a:text-[var(--conura-sea)] prose-a:font-bold prose-a:no-underline hover:prose-a:text-[var(--conura-orange)] hover:prose-a:underline
+                selection:bg-[var(--conura-sea)]/20 selection:text-foreground">
+                
+                <p className="text-xl text-foreground leading-relaxed mb-8 drop-cap">
                   Квантовые вычисления долгое время оставались в области теоретических изысканий, однако последние результаты команды физиков под руководством доктора Рейчел Чен показывают, что индустрия подошла к критической точке. Новый процессор «Condor», обладающий 1121 кубитом, продемонстрировал уровень когерентности, ранее считавшийся недостижимым.
                 </p>
                 
-                <h2 className="text-3xl font-black tracking-tight mt-16 mb-8 text-foreground">Укрощение квантового шума</h2>
+                <h2 className="text-3xl sm:text-4xl text-foreground mt-16 mb-8">Укрощение квантового шума</h2>
                 <p className="mb-8">
                   Основной проблемой масштабирования всегда был квантовый шум — внешние помехи, разрушающие хрупкое состояние суперпозиции. В «Condor» инженерам удалось интегрировать новую систему активного подавления эха на уровне аппаратных вентилей.
                 </p>
                 
                 {/* Visual Accent Layer */}
-                <div className="my-16 p-12 rounded-[3rem] bg-secondary/50 border border-primary/10 relative overflow-hidden">
-                  <Quotes size={120} weight="fill" className="absolute -top-6 -left-6 text-primary/5" />
-                  <p className="text-3xl font-serif italic text-primary leading-tight relative z-10">
+                <div className="my-16 p-10 sm:p-12 rounded-[2.5rem] bg-secondary border border-border relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--conura-sea)]/5 rounded-full blur-3xl -z-0" />
+                  <Quotes size={80} weight="fill" className="absolute top-8 left-8 text-foreground/5" />
+                  <p className="text-2xl sm:text-3xl font-serif italic text-foreground leading-tight relative z-10 mb-8">
                     «Мы больше не спрашиваем, возможен ли квантовый переход. Мы замеряем скорость, с которой он изменит архитектуру мировой сети.»
                   </p>
-                  <div className="mt-8 font-black text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    — Профессор Стивен Вайнберг
+                  <div className="font-black text-[10px] uppercase tracking-[0.2em] text-[var(--conura-sea)] flex items-center gap-2">
+                    <div className="h-[1px] w-8 bg-[var(--conura-sea)]" />
+                    Профессор Стивен Вайнберг
                   </div>
                 </div>
 
-                <p className="mb-8 font-serif text-xl border-y border-primary/5 py-10 my-12 bg-primary/[0.02] px-8 rounded-3xl">
+                <p className="mb-8 text-lg font-bold border-l-4 border-[var(--conura-orange)] pl-6 py-2 text-foreground">
                   Интересный факт: При охлаждении процессора Condor до сверхнизких температур потребление энергии снижается на 40% по сравнению с предыдущими итерациями.
                 </p>
 
@@ -138,24 +150,24 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
               </div>
 
               {/* Interactions Footer */}
-              <footer className="mt-20 pt-10 border-t border-primary/10">
+              <footer className="mt-20 pt-10 border-t border-border">
                 <div className="flex flex-wrap items-center justify-between gap-6">
                   <div className="flex gap-4">
-                    <Button variant="outline" className="h-14 px-8 rounded-2xl border-primary/10 hover:bg-primary/5 gap-3 font-bold">
-                      <HandsClapping size={22} weight="duotone" className="text-primary" />
-                      1.2K Аплодисментов
+                    <Button variant="outline" className="h-14 px-8 rounded-2xl border-border hover:bg-secondary hover:text-[var(--conura-sea)] gap-3 font-bold text-base transition-all">
+                      <HandsClapping size={22} weight="duotone" />
+                      1.2K
                     </Button>
-                    <Button variant="outline" className="h-14 px-8 rounded-2xl border-primary/10 hover:bg-primary/5 gap-3 font-bold">
-                      <ChatCircleText size={22} weight="duotone" className="text-primary" />
-                      48 Комментариев
+                    <Button variant="outline" className="h-14 px-8 rounded-2xl border-border hover:bg-secondary gap-3 font-bold text-base transition-all">
+                      <ChatCircleText size={22} weight="duotone" />
+                      48
                     </Button>
                   </div>
                   
                   <div className="flex gap-2">
-                    <Button variant="secondary" size="icon" className="h-14 w-14 rounded-2xl">
+                    <Button variant="secondary" size="icon" className="h-14 w-14 rounded-2xl hover:bg-[var(--conura-sea)] hover:text-white transition-all">
                       <ShareNetwork size={22} weight="bold" />
                     </Button>
-                    <Button variant="secondary" size="icon" className="h-14 w-14 rounded-2xl">
+                    <Button variant="secondary" size="icon" className="h-14 w-14 rounded-2xl hover:text-[var(--conura-orange)] transition-all">
                       <BookmarkSimple size={22} weight="bold" />
                     </Button>
                   </div>
@@ -166,15 +178,15 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
 
           {/* Sidebar */}
           <aside className="hidden lg:block w-80 space-y-12 shrink-0 h-fit sticky top-28">
-            <div className="p-8 rounded-[2rem] bg-secondary/40 border border-primary/5">
-              <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-6">Автор материала</h3>
+            <div className="p-8 rounded-[2rem] bg-card border border-border shadow-lg">
+              <h3 className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-8">Автор материала</h3>
               <Link href="/authors/1" className="flex flex-col items-center text-center group/sideauthor">
-                <div className="h-24 w-24 rounded-3xl bg-primary/10 flex items-center justify-center text-primary mb-4 border border-primary/10 group-hover/sideauthor:scale-105 transition-transform">
-                  <User size={48} weight="duotone" />
+                <div className="h-28 w-28 rounded-[2rem] bg-secondary flex items-center justify-center text-foreground mb-6 transition-transform duration-500 group-hover/sideauthor:scale-110 group-hover/sideauthor:rotate-3">
+                  <User size={64} weight="duotone" />
                 </div>
-                <div className="font-black text-xl mb-1 group-hover/sideauthor:text-primary transition-colors">{article.author}</div>
-                <p className="text-sm text-muted-foreground font-medium mb-6">Специализируется на квантовой физике и высоких технологиях.</p>
-                <Button variant="secondary" className="w-full rounded-xl font-bold group-hover/sideauthor:bg-primary group-hover/sideauthor:text-primary-foreground transition-all">Подписаться</Button>
+                <div className="font-black text-2xl mb-2 text-foreground group-hover/sideauthor:text-[var(--conura-sea)] transition-colors">{article.author}</div>
+                <p className="text-sm text-muted-foreground font-semibold mb-8 leading-relaxed">Специализируется на квантовой физике и высоких технологиях.</p>
+                <Button className="w-full h-12 rounded-xl font-black bg-foreground text-background hover:bg-[var(--conura-sea)] transition-all uppercase tracking-widest text-[10px]">Подписаться</Button>
               </Link>
             </div>
 

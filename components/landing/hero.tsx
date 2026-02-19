@@ -21,14 +21,7 @@ export function Hero() {
                     
                     {/* Left Content */}
                     <div className="lg:col-span-8">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground/5 border border-foreground/5 text-foreground text-[10px] font-black uppercase tracking-[0.3em] mb-12"
-                        >
-                            <div className="w-1.5 h-1.5 rounded-full bg-[var(--conura-sea)] animate-pulse" />
-                            Core Intelligence / 2026
-                        </motion.div>
+                        
 
                         <motion.h1 
                             initial={{ opacity: 0, y: 30 }}
