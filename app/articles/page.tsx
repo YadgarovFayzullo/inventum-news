@@ -101,7 +101,7 @@ export default function ArticlesPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`h-12 rounded-xl px-6 font-black text-sm uppercase tracking-wider transition-all duration-300 ${
                   activeCategory === cat 
-                    ? "bg-foreground text-background shadow-lg scale-105" 
+                    ? "bg-foreground text-background shadow-lg" 
                     : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
                 }`}
               >
@@ -138,7 +138,7 @@ export default function ArticlesPage() {
                     </Badge>
                   </div>
                   <div className="w-full h-full flex items-center justify-center">
-                     <Atom size={80} weight="duotone" className="text-foreground/10 group-hover:text-[var(--conura-sea)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-12" />
+                     <Atom size={80} weight="duotone" className="text-foreground/10 group-hover:text-[var(--conura-sea)] transition-all duration-500 group-hover:rotate-12" />
                   </div>
                 </div>
 

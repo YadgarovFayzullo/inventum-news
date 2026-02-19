@@ -96,7 +96,7 @@ export default function AuthorsPage() {
           {authors.map((author, index) => (
             <div 
                 key={author.id} 
-                className="group relative rounded-[2rem] border border-border bg-card p-6 sm:p-8 transition-all duration-500 hover:border-[var(--conura-sea)]/30 hover:shadow-xl hover:scale-[1.01]"
+                className="group relative rounded-[2rem] border border-border bg-card p-6 sm:p-8 transition-all duration-500 hover:border-[var(--conura-sea)]/30 hover:shadow-xl"
             >
               <Link href={`/authors/${author.id}`} className="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
                 

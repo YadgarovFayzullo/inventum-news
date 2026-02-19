@@ -64,7 +64,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
           <Card className="group cursor-pointer overflow-hidden rounded-[3rem] border border-border bg-card shadow-lg hover:shadow-2xl hover:border-[var(--conura-sea)]/30 transition-all duration-500 lg:flex min-h-[500px]">
             <div className="lg:w-7/12 relative bg-secondary overflow-hidden">
                <div className="absolute inset-0 flex items-center justify-center">
-                  <Atom size={200} weight="duotone" className="text-foreground/5 group-hover:text-[var(--conura-sea)]/20 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12" />
+                  <Atom size={200} weight="duotone" className="text-foreground/5 group-hover:text-[var(--conura-sea)]/20 transition-all duration-700 group-hover:rotate-12" />
                </div>
                <div className="absolute bottom-12 left-12 right-12">
                  <Badge className="bg-background/90 backdrop-blur-xl text-foreground border border-white/10 rounded-full px-4 py-2 text-[10px] font-black uppercase tracking-widest mb-6 w-fit shadow-xl">
@@ -92,7 +92,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
                 
-                <div className="h-14 w-14 rounded-full bg-foreground text-background flex items-center justify-center group-hover:bg-[var(--conura-sea)] transition-all group-hover:scale-110 shadow-xl">
+                <div className="h-14 w-14 rounded-full bg-foreground text-background flex items-center justify-center group-hover:bg-[var(--conura-sea)] transition-all shadow-xl">
                    <ArrowRight size={20} weight="bold" />
                 </div>
               </div>

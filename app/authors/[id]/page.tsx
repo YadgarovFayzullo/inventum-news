@@ -120,7 +120,7 @@ export default function AuthorProfilePage({ params }: { params: { id: string } }
           <aside className="lg:w-1/3 xl:w-1/4">
             <div className="sticky top-28 space-y-10">
               <div className="relative group w-fit mx-auto lg:mx-0">
-                <div className="h-48 w-48 rounded-[3rem] bg-secondary flex items-center justify-center overflow-hidden border border-border transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3">
+                <div className="h-48 w-48 rounded-[3rem] bg-secondary flex items-center justify-center overflow-hidden border border-border transition-transform duration-500 group-hover:rotate-3">
                   <User size={96} weight="duotone" className="text-foreground/20 group-hover:text-[var(--conura-sea)] transition-colors" />
                 </div>
                 <div className="absolute -bottom-4 -right-4 h-16 w-16 bg-background rounded-2xl flex items-center justify-center text-foreground shadow-xl border border-border group-hover:border-[var(--conura-sea)] transition-colors">
@@ -142,7 +142,7 @@ export default function AuthorProfilePage({ params }: { params: { id: string } }
                     <a 
                       key={i} 
                       href={soc.href} 
-                      className="h-12 w-12 rounded-xl bg-secondary/50 border border-transparent hover:border-border flex items-center justify-center text-foreground hover:bg-background hover:scale-110 transition-all duration-300"
+                      className="h-12 w-12 rounded-xl bg-secondary/50 border border-transparent hover:border-border flex items-center justify-center text-foreground hover:bg-background transition-all duration-300"
                     >
                       <Icon size={20} weight="duotone" />
                     </a>
@@ -185,7 +185,7 @@ export default function AuthorProfilePage({ params }: { params: { id: string } }
                     <Link href={`/articles/${article.id}`} className="flex flex-col md:flex-row">
                       <div className="md:w-1/3 min-h-[240px] md:min-h-0 relative bg-secondary overflow-hidden">
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <Article size={64} weight="duotone" className="text-foreground/10 group-hover:text-[var(--conura-sea)] transition-colors duration-500 group-hover:scale-110" />
+                            <Article size={64} weight="duotone" className="text-foreground/10 group-hover:text-[var(--conura-sea)] transition-colors duration-500" />
                         </div>
                         <div className="absolute top-4 left-4">
                              <Badge className="bg-background/80 backdrop-blur-md text-foreground border border-white/10 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-widest">
