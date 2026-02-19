@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-    Clock,
-    ArrowRight,
-    User,
-    Atom as AtomIcon,
-    Flask as BeakerIcon
+import { 
+    Clock, 
+    ArrowRight, 
+    User, 
+    Atom as AtomIcon, 
+    Flask as BeakerIcon 
 } from "@phosphor-icons/react";
 import { Badge } from "@/components/ui/badge";
 
@@ -38,11 +38,11 @@ const featuredArticles = [
 
 export function FeaturedArticles() {
     return (
-        <section id="featured" className="py-28 bg-background relative overflow-hidden">
+        <section id="featured" className="py-16 sm:py-28 bg-background relative overflow-hidden">
             <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
-
+                
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 sm:mb-20">
                     <div className="max-w-2xl">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -52,9 +52,13 @@ export function FeaturedArticles() {
                             <div className="h-[1px] w-8 bg-[var(--conura-sea)]" />
                             Special Reports
                         </motion.div>
-                        <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-none text-foreground">
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-none text-foreground"
+                        >
                             Главные <span className="text-[var(--conura-orange)] italic">материалы</span>
-                        </h2>
+                        </motion.h2>
                     </div>
                     <Link href="/articles" className="group flex items-center gap-4 text-lg font-black hover:text-[var(--conura-sea)] transition-colors">
                         Весь архив
@@ -73,37 +77,37 @@ export function FeaturedArticles() {
                             transition={{ delay: i * 0.1 }}
                             className="group"
                         >
-                            <Link href={`/articles/${article.id}`} className="block relative overflow-hidden rounded-[3.5rem] bg-card border border-border transition-all duration-500 hover:border-transparent hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)]">
-
+                            <Link href={`/articles/${article.id}`} className="block relative overflow-hidden rounded-[2.5rem] sm:rounded-[3.5rem] bg-card border border-border transition-all duration-500 hover:border-transparent hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)]">
+                                
                                 {/* Image Container */}
                                 <div className="relative aspect-[16/10] overflow-hidden">
-                                    <img
-                                        src={article.image}
+                                    <img 
+                                        src={article.image} 
                                         alt={article.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-
-                                    <div className="absolute top-8 left-8">
+                                    
+                                    <div className="absolute top-6 left-6 sm:top-8 sm:left-8">
                                         <Badge className="h-10 px-6 rounded-full bg-background/20 backdrop-blur-md border border-white/20 text-white font-black uppercase tracking-widest text-[10px]">
                                             {article.category}
                                         </Badge>
                                     </div>
 
                                     {/* Icon Accent Overlay */}
-                                    <div className="absolute bottom-8 right-8">
-                                        <div className="h-16 w-16 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white">
+                                    <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8">
+                                        <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white">
                                             {article.category === "Физика" ? (
-                                                <AtomIcon size={32} weight="duotone" />
+                                                <AtomIcon size={24} weight="duotone" className="sm:w-8 sm:h-8" />
                                             ) : (
-                                                <BeakerIcon size={32} weight="duotone" />
+                                                <BeakerIcon size={24} weight="duotone" className="sm:w-8 sm:h-8" />
                                             )}
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-10 md:p-12">
+                                <div className="p-6 sm:p-10 md:p-12">
                                     <div className="flex items-center gap-6 mb-8 text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">
                                         <div className="flex items-center gap-2">
                                             <User size={16} weight="duotone" className="text-[var(--conura-sea)]" />
@@ -115,11 +119,11 @@ export function FeaturedArticles() {
                                         </div>
                                     </div>
 
-                                    <h3 className="text-3xl md:text-4xl font-black mb-6 leading-tight group-hover:text-[var(--conura-sea)] transition-colors">
+                                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black mb-6 leading-tight group-hover:text-[var(--conura-sea)] transition-colors">
                                         {article.title}
                                     </h3>
 
-                                    <p className="text-xl text-muted-foreground font-semibold leading-relaxed mb-10 line-clamp-2">
+                                    <p className="text-lg sm:text-xl text-muted-foreground font-semibold leading-relaxed mb-10 line-clamp-2">
                                         {article.excerpt}
                                     </p>
 

@@ -36,11 +36,11 @@ const categories: Category[] = [
 
 export function Categories() {
     return (
-        <section id="categories" className="py-28 bg-background relative overflow-hidden">
+        <section id="categories" className="py-16 sm:py-28 bg-background relative overflow-hidden">
             <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
                 
                 {/* Section Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 sm:mb-20">
                     <div className="max-w-2xl">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -56,7 +56,7 @@ export function Categories() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-5xl md:text-7xl font-black tracking-tight leading-none"
+                            className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-none"
                         >
                             Архив <span className="text-[var(--conura-sea)] italic text-stroke">дисциплин</span>
                         </motion.h2>
@@ -91,7 +91,7 @@ function CategoryCard({ cat, index }: { cat: Category, index: number }) {
                     style={{ backgroundColor: `oklch(from ${cat.accent} l c h / 0.1)` }}
                 />
                 
-                <CardContent className="p-10 flex flex-col h-full bg-card">
+                <CardContent className="p-6 sm:p-10 flex flex-col h-full bg-card">
                     <div className="mb-10 relative">
                         <div className="flex h-20 w-20 items-center justify-center rounded-[2rem] bg-secondary text-foreground group-hover:bg-foreground group-hover:text-background transition-all duration-500 group-hover:rotate-12">
                             <Icon size={40} weight="duotone" />

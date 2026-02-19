@@ -68,14 +68,14 @@ export function About() {
     const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
     return (
-        <section id="about" className="py-28 bg-background relative overflow-hidden" ref={containerRef}>
+        <section id="about" className="py-16 sm:py-28 bg-background relative overflow-hidden" ref={containerRef}>
             {/* Background Decorative Element */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--conura-sea)]/5 rounded-full blur-[120px] -z-10" />
 
             <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
 
                 {/* Animated Stats Section */}
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-28">
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-12 sm:mb-28">
                     {stats.map((stat, i) => (
                         <StatCard key={stat.label} stat={stat} index={i} isInView={isInView} />
                     ))}
@@ -113,7 +113,7 @@ export function About() {
                         transition={{ duration: 0.8, delay: 0.6 }}
                         className="relative p-1 rounded-[4.5rem] bg-gradient-to-br from-foreground/10 to-transparent border border-foreground/5 shadow-2xl"
                     >
-                        <div className="bg-card rounded-[4.4rem] p-12 sm:p-16 relative overflow-hidden h-[500px] flex flex-col justify-center">
+                        <div className="bg-card rounded-[4.4rem] p-6 sm:p-12 md:p-16 relative overflow-hidden h-[500px] flex flex-col justify-center">
                             <Quotes size={100} weight="fill" className="absolute top-8 left-8 text-foreground/5" />
 
                             <AnimatePresence mode="wait">
@@ -191,7 +191,7 @@ function StatCard({ stat, index, isInView }: { stat: any, index: number, isInVie
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="group p-10 rounded-[3.5rem] bg-card border border-border hover:border-[var(--conura-sea)]/30 hover:scale-[1.02] transition-all duration-500 shadow-sm"
+            className="group p-6 sm:p-10 rounded-[3.5rem] bg-card border border-border hover:border-[var(--conura-sea)]/30 hover:scale-[1.02] transition-all duration-500 shadow-sm"
         >
             <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-[1.5rem] bg-secondary text-foreground group-hover:bg-foreground group-hover:text-background transition-all duration-500">
                 <Icon size={32} weight="duotone" />

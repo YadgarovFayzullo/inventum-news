@@ -29,11 +29,11 @@ export function ScientificDashboard() {
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-28 bg-background relative overflow-hidden" ref={containerRef}>
+    <section className="py-16 sm:py-28 bg-background relative overflow-hidden" ref={containerRef}>
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         
         {/* Header - Conura Style */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 sm:mb-20">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -47,7 +47,7 @@ export function ScientificDashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-black tracking-tight leading-none text-foreground"
+              className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-none text-foreground"
             >
               Метрики <span className="text-[var(--conura-orange)] italic">прогресса</span>
             </motion.h2>
@@ -69,9 +69,9 @@ export function ScientificDashboard() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-7 bg-card rounded-[4rem] p-12 border border-border shadow-sm flex flex-col md:flex-row items-center gap-16"
+            className="lg:col-span-7 bg-card rounded-[2.5rem] sm:rounded-[4rem] p-6 sm:p-12 border border-border shadow-sm flex flex-col md:flex-row items-center gap-8 sm:gap-16"
           >
-            <div className="relative w-64 h-64 shrink-0">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 shrink-0">
               <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                 <circle
                   cx="50" cy="50" r="45"
@@ -124,7 +124,7 @@ export function ScientificDashboard() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.4 }}
-              className="bg-foreground text-background rounded-[3.5rem] p-10 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500"
+              className="bg-foreground text-background rounded-[2.5rem] sm:rounded-[3.5rem] p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500"
             >
               <div className="flex justify-between items-start relative z-10">
                 <div className="p-4 bg-background/5 rounded-2xl">
@@ -146,7 +146,7 @@ export function ScientificDashboard() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.6 }}
-              className="bg-card rounded-[3.5rem] p-10 border border-border flex items-center justify-between group cursor-help transition-all duration-500 hover:border-[var(--conura-orange)]/30 hover:shadow-xl hover:shadow-[var(--conura-orange)]/5"
+              className="bg-card rounded-[2.5rem] sm:rounded-[3.5rem] p-6 sm:p-10 border border-border flex items-center justify-between group cursor-help transition-all duration-500 hover:border-[var(--conura-orange)]/30 hover:shadow-xl hover:shadow-[var(--conura-orange)]/5"
             >
               <div>
                 <div className="text-xs font-black text-[var(--conura-orange)] uppercase tracking-[0.2em] mb-2">Impact Factor</div>
@@ -178,7 +178,7 @@ export function ScientificDashboard() {
                initial={{ opacity: 0, y: 20 }}
                animate={isInView ? { opacity: 1, y: 0 } : {}}
                transition={{ delay: 0.8 + i * 0.1 }}
-               className="group relative h-56 rounded-[3rem] bg-card border border-border p-8 flex flex-col items-center justify-center gap-6 hover:border-transparent hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden text-center"
+               className="group relative h-56 rounded-[2rem] sm:rounded-[3rem] bg-card border border-border p-4 sm:p-8 flex flex-col items-center justify-center gap-6 hover:border-transparent hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden text-center"
              >
                 <div className="relative z-10 transition-transform duration-500 group-hover:-translate-y-2">
                   <tool.icon size={48} weight="duotone" className="text-foreground transition-colors duration-500 group-hover:text-background" />

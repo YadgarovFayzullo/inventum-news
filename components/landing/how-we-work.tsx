@@ -46,17 +46,17 @@ export function HowWeWork() {
     const progressHeight = (activeStep / (steps.length - 1)) * 100;
 
     return (
-        <section className="py-28 bg-secondary/30 relative overflow-hidden">
+        <section className="py-16 sm:py-28 bg-secondary/30 relative overflow-hidden">
             <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10" ref={containerRef}>
 
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 sm:mb-24">
                     <div className="max-w-2xl">
                         <div className="text-[var(--conura-orange)] font-black uppercase tracking-[0.4em] text-[10px] mb-6 flex items-center gap-3">
                             <div className="h-[1px] w-8 bg-[var(--conura-orange)]" />
                             Editorial Pipeline
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-none text-foreground">
+                        <h2 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-none text-foreground">
                             Как создается <span className="text-[var(--conura-sea)] italic">Inventum</span>
                         </h2>
                     </div>
@@ -68,9 +68,9 @@ export function HowWeWork() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
                     {/* Timeline Steps */}
-                    <div className="lg:col-span-6 relative pl-12 md:pl-16">
+                    <div className="lg:col-span-6 relative pl-8 sm:pl-12 md:pl-16">
                         {/* Vertical Progress Bar */}
-                        <div className="absolute left-4 md:left-6 top-2 bottom-2 w-[2px] bg-foreground/5">
+                        <div className="absolute left-3 sm:left-4 md:left-6 top-2 bottom-2 w-[2px] bg-foreground/5">
                             <motion.div
                                 className="absolute top-0 left-0 w-full bg-foreground"
                                 animate={{ height: `${progressHeight}%` }}
@@ -87,10 +87,10 @@ export function HowWeWork() {
                                 >
                                     {/* Step Point */}
                                     <motion.div
-                                        className={`absolute -left-12 md:left-[-38px] top-4 w-3 h-3 rounded-full z-10 border-2 transition-all duration-300 ${activeStep === index ? 'bg-foreground border-foreground scale-125' : 'bg-background border-foreground/10'}`}
+                                        className={`absolute -left-[22px] sm:-left-12 md:left-[-38px] top-4 w-3 h-3 rounded-full z-10 border-2 transition-all duration-300 ${activeStep === index ? 'bg-foreground border-foreground scale-125' : 'bg-background border-foreground/10'}`}
                                     />
 
-                                    <div className={`p-8 rounded-[2.5rem] transition-all duration-500 border border-transparent ${activeStep === index ? 'bg-card border-border shadow-xl shadow-foreground/5' : 'hover:bg-card/50'}`}>
+                                    <div className={`p-6 sm:p-8 rounded-[2.5rem] transition-all duration-500 border border-transparent ${activeStep === index ? 'bg-card border-border shadow-xl shadow-foreground/5' : 'hover:bg-card/50'}`}>
                                         <div className="flex items-start gap-6">
                                             <div className={`h-12 w-12 rounded-2xl flex items-center justify-center transition-all duration-500 ${activeStep === index ? 'bg-foreground text-background' : 'bg-secondary text-foreground/40'}`}>
                                                 <step.icon size={24} weight="duotone" />
