@@ -82,23 +82,37 @@ export function Hero() {
                             </div>
 
                             {/* Floating Metadata Disks */}
+                            {/* Orbiting: Citations */}
                             <motion.div 
-                                animate={{ y: [0, -20, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute -top-6 -right-6 h-20 w-20 sm:-top-10 sm:-right-10 sm:h-32 sm:w-32 rounded-full bg-card shadow-2xl border border-border flex flex-col items-center justify-center text-center p-2 sm:p-4 z-20"
+                                className="absolute inset-[-40px] sm:inset-[-60px] z-20 pointer-events-none"
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
                             >
-                                <span className="text-[var(--conura-sea)] font-black text-lg sm:text-2xl leading-none">8.2к</span>
-                                <span className="text-[6px] sm:text-[8px] font-black uppercase tracking-widest mt-1 opacity-40 leading-none">Citations</span>
+                                <motion.div 
+                                    className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-20 w-20 sm:h-32 sm:w-32 rounded-full bg-card shadow-2xl border border-border flex flex-col items-center justify-center text-center p-2 sm:p-4"
+                                    animate={{ rotate: -360 }}
+                                    transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                                >
+                                    <span className="text-[var(--conura-sea)] font-black text-lg sm:text-2xl leading-none">8.2к</span>
+                                    <span className="text-[6px] sm:text-[8px] font-black uppercase tracking-widest mt-1 opacity-40 leading-none">Citations</span>
+                                </motion.div>
                             </motion.div>
 
+                            {/* Orbiting: Global Reach */}
                             <motion.div 
-                                animate={{ y: [0, 20, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                className="absolute -bottom-6 -left-6 h-24 w-24 sm:-bottom-10 sm:-left-10 sm:h-40 sm:w-40 rounded-full bg-foreground text-background shadow-2xl flex flex-col items-center justify-center text-center p-2 sm:p-4 z-20"
+                                className="absolute inset-[-20px] sm:inset-[-30px] z-20 pointer-events-none"
+                                animate={{ rotate: -360 }}
+                                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
                             >
-                                <Globe size={24} weight="duotone" className="mb-1 sm:mb-2 text-[var(--conura-orange)]" />
-                                <span className="text-sm sm:text-xl font-black leading-none">Global</span>
-                                <span className="text-[6px] sm:text-[8px] font-black uppercase tracking-widest mt-1 opacity-40 leading-none">Reach</span>
+                                <motion.div 
+                                    className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-24 w-24 sm:h-40 sm:w-40 rounded-full bg-foreground text-background shadow-2xl flex flex-col items-center justify-center text-center p-2 sm:p-4"
+                                    animate={{ rotate: 360 }}
+                                    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                                >
+                                    <Globe size={24} weight="duotone" className="mb-1 sm:mb-2 text-[var(--conura-orange)]" />
+                                    <span className="text-sm sm:text-xl font-black leading-none">Global</span>
+                                    <span className="text-[6px] sm:text-[8px] font-black uppercase tracking-widest mt-1 opacity-40 leading-none">Reach</span>
+                                </motion.div>
                             </motion.div>
 
                             {/* Rotating Orbit */}

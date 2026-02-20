@@ -16,7 +16,17 @@ import {
 } from "@phosphor-icons/react";
 
 export default function CategoryPage({ params }: { params: { slug: string } }) {
-  const categoryName = "Физика"; // В реальности берем из параметров
+  const slug = params.slug;
+  
+  const categoryNames: Record<string, string> = {
+    "physics": "Физика",
+    "biology": "Биология",
+    "technology": "Технологии",
+    "space": "Космос",
+    "medicine": "Медицина"
+  };
+
+  const categoryName = categoryNames[slug] || slug.charAt(0).toUpperCase() + slug.slice(1);
   
   return (
     <div className="min-h-screen bg-background">

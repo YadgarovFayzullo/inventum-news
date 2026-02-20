@@ -104,6 +104,18 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
                 </div>
               </header>
 
+              {/* Hero Image */}
+              <div className="mb-16 rounded-[2.5rem] overflow-hidden aspect-video bg-secondary relative shadow-lg group">
+                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--conura-sea)]/20 to-purple-500/20 mix-blend-overlay" />
+                 <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30">
+                    <span className="sr-only">Article Main Image</span>
+                    {/* Placeholder Icon */}
+                    <div className="h-24 w-24 rounded-full border-2 border-current flex items-center justify-center opacity-50">
+                        <div className="h-16 w-16 bg-current rounded-full opacity-20" />
+                    </div>
+                 </div>
+              </div>
+
               {/* Leading Text */}
               <div className="text-2xl sm:text-3xl text-foreground font-black leading-tight mb-12 relative">
                 <span className="absolute -left-6 top-0 text-[var(--conura-orange)] opacity-50">/</span>
@@ -116,7 +128,9 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
                 prose-p:leading-relaxed prose-p:text-lg
                 prose-strong:text-foreground prose-strong:font-black
                 prose-a:text-[var(--conura-sea)] prose-a:font-bold prose-a:no-underline hover:prose-a:text-[var(--conura-orange)] hover:prose-a:underline
-                selection:bg-[var(--conura-sea)]/20 selection:text-foreground">
+                selection:bg-[var(--conura-sea)]/20 selection:text-foreground
+                prose-img:rounded-[2.5rem] prose-img:border prose-img:border-border prose-img:shadow-xl prose-img:my-12
+                prose-figcaption:text-center prose-figcaption:text-xs prose-figcaption:font-black prose-figcaption:text-muted-foreground prose-figcaption:uppercase prose-figcaption:tracking-[0.2em] prose-figcaption:mt-6">
 
                 <p className="text-xl text-foreground leading-relaxed mb-8 drop-cap">
                   Квантовые вычисления долгое время оставались в области теоретических изысканий, однако последние результаты команды физиков под руководством доктора Рейчел Чен показывают, что индустрия подошла к критической точке. Новый процессор «Condor», обладающий 1121 кубитом, продемонстрировал уровень когерентности, ранее считавшийся недостижимым.
@@ -126,6 +140,23 @@ export default function ArticleDetailPage({ params }: { params: { id: string } }
                 <p className="mb-8">
                   Основной проблемой масштабирования всегда был квантовый шум — внешние помехи, разрушающие хрупкое состояние суперпозиции. В «Condor» инженерам удалось интегрировать новую систему активного подавления эха на уровне аппаратных вентилей.
                 </p>
+
+                {/* Inline Image Example */}
+                <figure className="my-16">
+                    <div className="rounded-[2.5rem] overflow-hidden aspect-[21/9] bg-secondary relative border border-border group">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-teal-500/10" />
+                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20">
+                             {/* Graphic Placeholder */}
+                             <div className="flex gap-2 items-end h-16">
+                                <div className="w-4 bg-current h-8 rounded-t-sm" />
+                                <div className="w-4 bg-current h-12 rounded-t-sm" />
+                                <div className="w-4 bg-current h-16 rounded-t-sm" />
+                                <div className="w-4 bg-current h-10 rounded-t-sm" />
+                             </div>
+                        </div>
+                    </div>
+                    <figcaption>График когерентности кубитов в процессоре Condor</figcaption>
+                </figure>
 
                 {/* Visual Accent Layer */}
                 <div className="my-16 p-10 sm:p-12 rounded-[2.5rem] bg-secondary border border-border relative overflow-hidden group">
